@@ -15,4 +15,7 @@ using FileIO, Test, NomnomlJS, VisualRegressionTests
         func = fname -> save(fname, (load(gen)))
         @visualtest func joinpath(dir, "reference.png") false 5.0
     end
+    for ext in ("pdf", "eps")
+        @test write(joinpath(dir, "generated.$ext"), d1) > 0
+    end
 end
