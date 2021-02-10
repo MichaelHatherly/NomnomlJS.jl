@@ -7,7 +7,7 @@ function build()
     package_dict = JSON.parsefile(joinpath(@__DIR__, "package.json"))
     pkgname = package_dict["name"]
     version = VersionNumber(package_dict["version"])
-    host = "https://github.com/MichaelHatlerly/NomnomlJS.jl/releases/download"
+    host = "https://github.com/MichaelHatherly/NomnomlJS.jl/releases/download"
 
     build_path = joinpath(@__DIR__, "build")
 
