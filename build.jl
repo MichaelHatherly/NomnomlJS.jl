@@ -40,7 +40,7 @@ function build()
         force = true,
         download_info = Tuple[
             (
-                "$host/v$(escapeuri(string(version)))/$archive_filename",
+                "$host/$(escapeuri(string(version)))/$archive_filename",
                 download_hash,
             ),
         ],

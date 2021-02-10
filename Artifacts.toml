@@ -1,6 +1,6 @@
 [nomnoml]
-git-tree-sha1 = "1b940afbd49096f97673c21cd2f45b6dddd6b59e"
+git-tree-sha1 = "c638e9a1ea882b7ce0e6a543ad19531f3de86ee8"
 
     [[nomnoml.download]]
-    sha256 = "db96a21b959241c5d60daa1e24e06bd1fb917e26bb69fa60514215e1c05b854b"
-    url = "https://github.com/MichaelHatlerly/NomnomlJS.jl/releases/download/v0.1.0/nomnomljs-0.1.0.tar.gz"
+    sha256 = "8dc0e66019f2839d121aee6f22560bbca981471e99592f7b56ef634b2f1e6cfc"
+    url = "https://github.com/MichaelHatlerly/NomnomlJS.jl/releases/download/0.1.0/nomnomljs-0.1.0.tar.gz"
