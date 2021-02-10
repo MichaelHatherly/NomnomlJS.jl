@@ -1,0 +1,6 @@
+[nomnoml]
+git-tree-sha1 = "1b940afbd49096f97673c21cd2f45b6dddd6b59e"
+
+    [[nomnoml.download]]
+    sha256 = "db96a21b959241c5d60daa1e24e06bd1fb917e26bb69fa60514215e1c05b854b"
+    url = "https://github.com/MichaelHatlerly/NomnomlJS.jl/releases/download/v0.1.0/nomnomljs-0.1.0.tar.gz"

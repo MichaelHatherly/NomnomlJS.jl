@@ -1,0 +1,15 @@
+name = "NomnomlJS"
+uuid = "05e5b401-cbd0-4511-9ee7-1ac7fa2205f5"
+authors = ["Mike <michaelhatherly@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+Artifacts = "56f22d72-fd6d-98f1-02f0-08ddc0907c33"
+Librsvg_jll = "925c91fb-5dd6-59dd-8e8c-345e74382d89"
+NodeJS = "2bd173c7-0d6d-553b-b6af-13a54713934c"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]

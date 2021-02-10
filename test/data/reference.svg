@@ -1,0 +1,109 @@
+<svg version="1.1" baseProfile="full" width="710.75" height="623" viewbox="0 0 710.75 623" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events" style="font:bold normal 12pt Helvetica, Helvetica, sans-serif;;stroke-linejoin:round;stroke-linecap:round">
+  <desc >[Pirate|eyeCount: Int|raid();pillage()|
+  [beard]--[parrot]
+  [beard]-:&gt;[foul mouth]
+]
+
+[&lt;table&gt;mischief | bawl | sing || yell | drink]
+
+[&lt;abstract&gt;Marauder]&lt;:--[Pirate]
+[Pirate]- 0..7[mischief]
+[jollyness]-&gt;[Pirate]
+[jollyness]-&gt;[rum]
+[jollyness]-&gt;[singing]
+[Pirate]-&gt; *[rum|tastiness: Int|swig()]
+[Pirate]-&gt;[singing]
+[singing]&lt;-&gt;[rum]
+
+[&lt;start&gt;st]-&gt;[&lt;state&gt;plunder]
+[plunder]-&gt;[&lt;choice&gt;more loot]
+[more loot]-&gt;[st]
+[more loot] no -&gt;[&lt;end&gt;e]
+
+[&lt;actor&gt;Sailor] - [&lt;usecase&gt;shiver me;timbers]
+</desc>
+  <rect x="0" y="0" height="623" width="710.75" style="stroke:none; fill:transparent;"></rect>
+  <path d="M116.1 56.5 L116.1 88.5 L121.9 108.5 L121.9 108.5 " style="stroke:#33322E;fill:none;stroke-dasharray:6 6;stroke-width:3;"></path>
+  <path d="M121.4 69.8 L116.1 69.8 L110.7 69.8 L116.1 56.5 Z" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;stroke-width:3;"></path>
+  <text x="30.5" y="376.5" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;">0..7</text>
+  <path d="M81.2 344.5 L68.5 364.5 L68.5 384.5 L68.5 384.5 " style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M285.7 56.5 L220 88.5 L210.7 108.5 L210.7 108.5 " style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M211.5 94.2 L213.5 102.5 L221.2 98.6 L210.7 108.5 Z" style="stroke:#33322E;fill:#33322E;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M317.3 56.5 L317 88.5 L317 226.5 L317 226.5 L317 364.5 L317 364.5 L317 431 L317 431 L317 497.5 L317 497.5 L260.3 530.2 L260.3 530.2 " style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M269.1 519 L266 526.9 L274.5 528.2 L260.3 530.2 Z" style="stroke:#33322E;fill:#33322E;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M330.4 56.5 L357 88.5 L357 226.5 L357 226.5 L357 364.5 L357 364.5 L267.3 415.5 L267.3 415.5 " style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M276.2 404.3 L273.1 412.2 L281.5 413.5 L267.3 415.5 Z" style="stroke:#33322E;fill:#33322E;stroke-dasharray:none;stroke-width:3;"></path>
+  <text x="183" y="509.5" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;">*</text>
+  <path d="M162.4 344.5 L163.5 364.5 L163.5 431 L163.5 431 L163.5 497.5 L163.5 497.5 L175 517.5 L175 517.5 " style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M163.7 508.6 L171.7 511.7 L173 503.3 L175 517.5 Z" style="stroke:#33322E;fill:#33322E;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M227.8 344.5 L240 364.5 L240 415.5 L240 415.5 " style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M234.7 402.2 L240 408.8 L245.3 402.2 L240 415.5 Z" style="stroke:#33322E;fill:#33322E;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M240 446.5 L240 497.5 L228.5 517.5 L228.5 517.5 " style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M230.5 503.3 L231.8 511.7 L239.8 508.6 L228.5 517.5 Z" style="stroke:#33322E;fill:#33322E;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M245.3 459.8 L240 453.2 L234.7 459.8 L240 446.5 Z" style="stroke:#33322E;fill:#33322E;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M618.4 56 L591.8 88.5 L591.8 211 L591.8 211 " style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M586.4 197.7 L591.8 204.3 L597.1 197.7 L591.8 211 Z" style="stroke:#33322E;fill:#33322E;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M591.8 242 L591.8 364.5 L617.1 407.8 L617.1 407.8 " style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M605.8 398.9 L613.7 402 L615 393.6 L617.1 407.8 Z" style="stroke:#33322E;fill:#33322E;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M644.4 407.8 L669.8 364.5 L669.8 226.5 L669.8 226.5 L669.8 88.5 L669.8 88.5 L643.1 56 L643.1 56 " style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M655.6 62.9 L647.3 61.2 L647.4 69.7 L643.1 56 Z" style="stroke:#33322E;fill:#33322E;stroke-dasharray:none;stroke-width:3;"></path>
+  <text x="638.8" y="474.3" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;">no</text>
+  <path d="M630.8 454.3 L630.8 497.5 L630.8 549 L630.8 549 " style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M625.4 535.7 L630.8 542.3 L636.1 535.7 L630.8 549 Z" style="stroke:#33322E;fill:#33322E;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M455.6 68.5 L455.6 88.5 L455.6 197.8 L455.6 197.8 " style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <rect x="13.5" y="384.5" height="93" width="110" data-name="mischief" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;stroke-width:3;"></rect>
+  <text x="68.5" y="406" style="fill: #33322E;font:bold  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="mischief">mischief</text>
+  <text x="21.5" y="437" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="mischief">bawl</text>
+  <text x="76.5" y="437" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="mischief">sing</text>
+  <text x="21.5" y="468" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="mischief">yell</text>
+  <text x="76.5" y="468" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="mischief">drink</text>
+  <path d="M13.5 415.5 L13.5 415.5" data-name="mischief" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M13.5 415.5 L123.5 415.5" data-name="mischief" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M13.5 446.5 L123.5 446.5" data-name="mischief" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M68.5 415.5 L68.5 477.5" data-name="mischief" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M123.5 415.5 L123.5 477.5" data-name="mischief" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <rect x="42.5" y="108.5" height="236" width="228" data-name="Pirate" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;stroke-width:3;"></rect>
+  <text x="156.5" y="130" style="fill: #33322E;font:bold  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="Pirate">Pirate</text>
+  <text x="50.5" y="161" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="Pirate">eyeCount: Int</text>
+  <text x="50.5" y="192" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="Pirate">raid()</text>
+  <text x="50.5" y="207" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="Pirate">pillage()</text>
+  <path d="M121.1 260.5 L87 280.5 L87 300.5 L87 300.5 " data-name="Pirate" style="stroke:#33322E;fill:none;stroke-dasharray:6 6;stroke-width:3;"></path>
+  <path d="M173.9 260.5 L208 280.5 L208 300.5 L208 300.5 " data-name="Pirate" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M202.7 287.2 L208 287.2 L213.3 287.2 L208 300.5 Z" data-name="Pirate" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;stroke-width:3;"></path>
+  <rect x="116.5" y="229.5" height="31" width="62" data-name="beard" style="stroke:#33322E;fill:#fdf6e3;stroke-dasharray:none;stroke-width:3;"></rect>
+  <text x="147.5" y="251" style="fill: #33322E;font:bold  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="beard">beard</text>
+  <rect x="55.5" y="300.5" height="31" width="63" data-name="parrot" style="stroke:#33322E;fill:#fdf6e3;stroke-dasharray:none;stroke-width:3;"></rect>
+  <text x="87" y="322" style="fill: #33322E;font:bold  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="parrot">parrot</text>
+  <rect x="158.5" y="300.5" height="31" width="99" data-name="foul mouth" style="stroke:#33322E;fill:#fdf6e3;stroke-dasharray:none;stroke-width:3;"></rect>
+  <text x="208" y="322" style="fill: #33322E;font:bold  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="foul mouth">foul mouth</text>
+  <path d="M42.5 139.5 L270.5 139.5" data-name="foul mouth" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M42.5 170.5 L270.5 170.5" data-name="foul mouth" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M42.5 216.5 L270.5 216.5" data-name="foul mouth" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <rect x="143.5" y="517.5" height="93" width="117" data-name="rum" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;stroke-width:3;"></rect>
+  <text x="202" y="539" style="fill: #33322E;font:bold  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="rum">rum</text>
+  <text x="151.5" y="570" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="rum">tastiness: Int</text>
+  <text x="151.5" y="601" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;" data-name="rum">swig()</text>
+  <path d="M143.5 548.5 L260.5 548.5" data-name="rum" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M143.5 579.5 L260.5 579.5" data-name="rum" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <rect x="70.5" y="25.5" height="31" width="92" data-name="Marauder" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;stroke-width:3;"></rect>
+  <text x="116.5" y="47" style="fill: #33322E;font:normal italic 12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="Marauder">Marauder</text>
+  <rect x="275.5" y="25.5" height="31" width="85" data-name="jollyness" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;stroke-width:3;"></rect>
+  <text x="318" y="47" style="fill: #33322E;font:bold  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="jollyness">jollyness</text>
+  <rect x="203.5" y="415.5" height="31" width="73" data-name="singing" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;stroke-width:3;"></rect>
+  <text x="240" y="437" style="fill: #33322E;font:bold  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="singing">singing</text>
+  <circle r="12" cx="630.8" cy="41.5" data-name="st" style="stroke:none; fill:#33322E;"></circle>
+  <rect x="553.5" y="211.5" rx="15.5" ry="15.5" height="31" width="76" data-name="plunder" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;stroke-width:3;"></rect>
+  <text x="591.5" y="233" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="plunder">plunder</text>
+  <path d="M630.8 407.5 L698.5 431 L630.8 454 L563.5 431 Z" data-name="more loot" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;stroke-width:3;"></path>
+  <text x="631" y="436.8" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="more loot">more loot</text>
+  <circle r="10" cx="630.8" cy="564.5" data-name="e" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;stroke-width:3;"></circle>
+  <circle r="6" cx="630.8" cy="564.5" data-name="e" style="stroke:none; fill:#33322E;"></circle>
+  <circle r="4" cx="455.6" cy="25.5" data-name="Sailor" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;stroke-width:3;"></circle>
+  <path d="M455.6 29.5 L455.6 37.5" data-name="Sailor" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M451.6 33.5 L459.6 33.5" data-name="Sailor" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <path d="M451.6 41.5 L455.6 37.5 L459.6 41.5" data-name="Sailor" style="stroke:#33322E;fill:none;stroke-dasharray:none;stroke-width:3;"></path>
+  <text x="456" y="59" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="Sailor">Sailor</text>
+  <ellipse cx="455.6" cy="226.5" rx="58.125" ry="28.75" data-name="shiver me" style="stroke:#33322E;fill:#eee8d5;stroke-dasharray:none;stroke-width:3;"></ellipse>
+  <text x="455.6" y="224.8" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="shiver me">shiver me</text>
+  <text x="455.6" y="239.8" style="fill: #33322E;font:normal  12pt Helvetica, Helvetica, sans-serif;text-anchor: middle;" data-name="shiver me">timbers</text>
+</svg>

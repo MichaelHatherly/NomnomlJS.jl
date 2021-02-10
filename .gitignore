@@ -1,0 +1,4 @@
+/node_modules
+/build
+/Manifest.toml
+/test/data/generated.*
