@@ -7,6 +7,8 @@ JavaScript library for text-based UML diagrams exportable to `svg`, `png`,
 `pdf`, and `eps`. Please refer to the upstream documentation for the supported
 diagram syntax.
 
+This package is tested against Julia `1.3+` on Linux, MacOS, and Windows.
+
 ## Usage
 
 ```julia-repl
@@ -16,8 +18,14 @@ julia> using NomnomlJS
 
 julia> d = Diagram("[A] is -> [B]");
 
-julia> write("digram.svg", d);
+julia> write("diagram.svg", d);
+
+julia> write("diagram.png", d);
 
 julia> d = read("diagram.noml", Diagram);
+
+julia> write("diagram.pdf", d);
+
+julia> write("diagram.eps", d);
 
 ```
