@@ -29,3 +29,5 @@ julia> write("diagram.pdf", d);
 julia> write("diagram.eps", d);
 
 ```
+
+![diagram](test/data/reference.svg)
