@@ -205,7 +205,8 @@ mimetype(::Val{s}) where s = error("unknown format '$s'.")
 
 Base.show(io::IO, mime::SUPPORTED_MIMES, d::Diagram) = write(io, converter(d.src, mime))
 
-nomnoml() = `$(nodejs_cmd()) $(joinpath(artifact"nomnoml", "index.js"))`
+nomnoml_bin() = joinpath(artifact"nomnoml", "index.js")
+nomnoml() = `$(nodejs_cmd()) $(nomnoml_bin())`
 rsvg(m::SUPPORTED_MIMES) = Librsvg_jll.rsvg_convert(bin -> `$bin -f $(extension(m))`)
 
 function exec(cmd::Cmd, input::IOBuffer)
