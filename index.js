@@ -1,7 +1,11 @@
-var fs = require('fs');
-var nomnoml = require("nomnoml");
+const nomnoml = require('nomnoml');
 
-var [_, _, filename, outfile] = process.argv;
+process.stdin.setEncoding('utf8');
 
-var svg = nomnoml.renderSvg(fs.readFileSync(filename, 'utf-8'));
-fs.writeFileSync(outfile, svg);
+let input = '';
+process.stdin.on('data', chunk => {
+    input += chunk;
+});
+process.stdin.on('end', () => {
+    process.stdout.write(nomnoml.renderSvg(input));
+});

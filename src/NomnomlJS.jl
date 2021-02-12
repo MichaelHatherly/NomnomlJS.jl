@@ -201,30 +201,22 @@ mimetype(::Val{:pdf}) = PDF
 mimetype(::Val{:eps}) = EPS
 mimetype(::Val{s}) where s = error("unknown format '$s'.")
 
-
 ###
 
-function Base.show(io::IO, mime::SUPPORTED_MIMES, d::Diagram)
-    function handler(mime::SUPPORTED_MIMES, svg::String, out::String)
-        Librsvg_jll.rsvg_convert() do bin
-            run(`$bin --format $(extension(mime)) --output $out $svg`)
-        end
-        write(io, read(out))
-    end
-    handler(::SVG, svg::String, ::String) = write(io, read(svg, String))
-    handler(mime::MIME, ::String, ::String) = error("unknown mime type '$mime'.")
-    mktemp() do noml, _
-        mktemp() do svg, _
-            mktemp() do out, _
-                write(noml, d.src)
-                nomnoml(noml, svg)
-                handler(mime, svg, out)
-            end
-        end
-    end
-end
+Base.show(io::IO, mime::SUPPORTED_MIMES, d::Diagram) = write(io, converter(d.src, mime))
 
-nomnoml_bin() = joinpath(artifact"nomnoml", "index.js")
-nomnoml(input, output) = run(`$(nodejs_cmd()) $(nomnoml_bin()) $input $output`)
+nomnoml() = `$(nodejs_cmd()) $(joinpath(artifact"nomnoml", "index.js"))`
+rsvg(m::SUPPORTED_MIMES) = Librsvg_jll.rsvg_convert(bin -> `$bin -f $(extension(m))`)
+
+function exec(cmd::Cmd, input::IOBuffer)
+    output, errors = IOBuffer(), IOBuffer()
+    yes = success(pipeline(cmd; stdout = output, stdin = input, stderr = errors))
+    return (yes = yes, io = yes ? output : errors)
+end
+exec(cmd::Cmd, input="") = exec(cmd, IOBuffer(input))
+
+converter(src, ::SVG) = take!(check(exec(nomnoml(), src)).io)
+converter(src, m::SUPPORTED_MIMES) = take!(check(exec(rsvg(m), converter(src, SVG()))).io)
+check(result) = result.yes ? result : error(String(take!(result.io)))
 
 end # module
