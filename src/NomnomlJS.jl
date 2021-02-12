@@ -207,7 +207,6 @@ Base.show(io::IO, mime::SUPPORTED_MIMES, d::Diagram) = write(io, converter(d.src
 
 nomnoml_bin() = joinpath(artifact"nomnoml", "index.js")
 nomnoml() = `$(nodejs_cmd()) $(nomnoml_bin())`
-rsvg(m::SUPPORTED_MIMES) = Librsvg_jll.rsvg_convert(bin -> `$bin -f $(extension(m))`)
 
 function exec(cmd::Cmd, input::IOBuffer)
     output, errors = IOBuffer(), IOBuffer()
@@ -217,7 +216,11 @@ end
 exec(cmd::Cmd, input="") = exec(cmd, IOBuffer(input))
 
 converter(src, ::SVG) = take!(check(exec(nomnoml(), src)).io)
-converter(src, m::SUPPORTED_MIMES) = take!(check(exec(rsvg(m), converter(src, SVG()))).io)
+function converter(src, m::SUPPORTED_MIMES)
+    Librsvg_jll.rsvg_convert() do bin
+        take!(check(exec(`$bin -f $(extension(m))`, converter(src, SVG()))).io)
+    end
+end
 check(result) = result.yes ? result : error(String(take!(result.io)))
 
 end # module
