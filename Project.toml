@@ -1,7 +1,7 @@
 name = "NomnomlJS"
 uuid = "05e5b401-cbd0-4511-9ee7-1ac7fa2205f5"
 authors = ["Mike <michaelhatherly@gmail.com>"]
-version = "0.1.0"
+version = "0.1.1"
 
 [deps]
 Artifacts = "56f22d72-fd6d-98f1-02f0-08ddc0907c33"
