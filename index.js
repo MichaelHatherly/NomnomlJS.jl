@@ -1,4 +1,4 @@
-const nomnoml = require('nomnoml');
+import nomnoml from 'nomnoml';
 
 process.stdin.setEncoding('utf8');
 
