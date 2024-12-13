@@ -169,6 +169,10 @@ Construct a *nomnoml* diagram from the given source code `str`. To create a
 """
 struct Diagram
     src::String
+
+    # Ensure consistent line endings between platforms. Windows CI was failing
+    # with parse errors, due, it seems, to having `\r\n` lines.
+    Diagram(src) = new(replace(src, "\r\n" => "\n"))
 end
 
 Base.read(file::AbstractString, ::Type{Diagram}) = Diagram(read(file, String))
@@ -199,7 +203,7 @@ mimetype(::Val{:svg}) = SVG
 mimetype(::Val{:png}) = PNG
 mimetype(::Val{:pdf}) = PDF
 mimetype(::Val{:eps}) = EPS
-mimetype(::Val{s}) where s = error("unknown format '$s'.")
+mimetype(::Val{s}) where {s} = error("unknown format '$s'.")
 
 ###
 
@@ -210,16 +214,15 @@ nomnoml() = `$(nodejs_cmd()) $(nomnoml_bin())`
 
 function exec(cmd::Cmd, input::IOBuffer)
     output, errors = IOBuffer(), IOBuffer()
-    yes = success(pipeline(cmd; stdout = output, stdin = input, stderr = errors))
-    return (yes = yes, io = yes ? output : errors)
+    yes = success(pipeline(cmd; stdout=output, stdin=input, stderr=errors))
+    return (yes=yes, io=yes ? output : errors)
 end
 exec(cmd::Cmd, input="") = exec(cmd, IOBuffer(input))
 
 converter(src, ::SVG) = take!(check(exec(nomnoml(), src)).io)
 function converter(src, m::SUPPORTED_MIMES)
-    Librsvg_jll.rsvg_convert() do bin
-        take!(check(exec(`$bin -f $(extension(m))`, converter(src, SVG()))).io)
-    end
+    rsvg = Librsvg_jll.rsvg_convert()
+    return take!(check(exec(`$rsvg -f $(extension(m))`, converter(src, SVG()))).io)
 end
 check(result) = result.yes ? result : error(String(take!(result.io)))
 

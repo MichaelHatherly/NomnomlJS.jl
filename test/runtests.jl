@@ -1,4 +1,4 @@
-using FileIO, Test, NomnomlJS, VisualRegressionTests
+using FileIO, ImageIO, Test, NomnomlJS, ReferenceTests
 
 @testset "NomnomlJS" begin
     dir = joinpath(@__DIR__, "data")
@@ -11,9 +11,12 @@ using FileIO, Test, NomnomlJS, VisualRegressionTests
     # SVG isn't important since they all get generated from that to begin with.
     for ext in ("png",) # TODO "pdf", "eps")
         gen = joinpath(dir, "generated.$ext")
-        write(gen, d1)
-        func = fname -> save(fname, (load(gen)))
-        @visualtest func joinpath(dir, "reference.png") false 5.0
+        img = mktempdir() do tmp
+            tmp_file = joinpath(tmp, "file.$ext")
+            write(tmp_file, d1)
+            FileIO.load(tmp_file)
+        end
+        @test_reference joinpath(dir, "reference.$ext") img
     end
     for ext in ("pdf", "eps")
         @test write(joinpath(dir, "generated.$ext"), d1) > 0

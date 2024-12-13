@@ -1,6 +1,5 @@
 using Pkg.Artifacts
 using JSON
-using NodeJS
 using URIs
 
 function build()
@@ -19,14 +18,17 @@ function build()
 
     artifact_toml = joinpath(build_path, "..", "Artifacts.toml")
 
-    npm = NodeJS.npm_cmd()
+    product_hash = mktempdir() do dir
+        cp(joinpath(@__DIR__, "index.js"), joinpath(dir, "index.js"))
+        cp(joinpath(@__DIR__, "package.json"), joinpath(dir, "package.json"))
+        cp(joinpath(@__DIR__, "package-lock.json"), joinpath(dir, "package-lock.json"))
 
-    product_hash = create_artifact() do artifact_dir
-        cp(joinpath(@__DIR__, "index.js"), joinpath(artifact_dir, "index.js"))
-        cp(joinpath(@__DIR__, "package.json"), joinpath(artifact_dir, "package.json"))
-        cp(joinpath(@__DIR__, "package-lock.json"), joinpath(artifact_dir, "package-lock.json"))
+        run(Cmd(`npm ci`; dir=dir))
+        run(Cmd(`npx esbuild index.js --bundle --outfile=bundle.js --platform=node --target=node10`; dir=dir))
 
-        run(Cmd(`$npm install`, dir = artifact_dir))
+        return create_artifact() do artifact_dir
+            cp(joinpath(dir, "bundle.js"), joinpath(artifact_dir, "index.js"))
+        end
     end
 
     archive_filename = "$pkgname-$version.tar.gz"
@@ -37,12 +39,12 @@ function build()
         artifact_toml,
         "nomnoml",
         product_hash,
-        force = true,
-        download_info = Tuple[
+        force=true,
+        download_info=Tuple[
             (
-                "$host/$(escapeuri(string(version)))/$archive_filename",
-                download_hash,
-            ),
+            "$host/$(escapeuri(string(version)))/$archive_filename",
+            download_hash,
+        ),
         ],
     )
 end
